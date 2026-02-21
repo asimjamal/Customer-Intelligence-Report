@@ -101,9 +101,9 @@ jupyter notebook customer_analytics_eda.ipynb
 
 ## 👤 Author
 
-**Your Name**  
-Aspiring BI Analyst | Python · SQL · Data Storytelling  
-[LinkedIn](https://linkedin.com/in/your-profile) · [Kaggle](https://kaggle.com/your-profile)
+**Asim Jamal**  
+Python · SQL · Data Storytelling  
+[LinkedIn](https://www.linkedin.com/in/asimjamal/)
 
 ---
 

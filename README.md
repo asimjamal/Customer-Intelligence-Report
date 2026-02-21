@@ -32,7 +32,7 @@ The analysis is framed as if presenting to a marketing leadership team, with eac
 | **Size** | ~1 million rows |
 | **Columns** | Invoice, StockCode, Description, Quantity, InvoiceDate, Price, Customer ID, Country |
 
-> ⚠️ The dataset file is not included in this repo due to size. Download it directly from Kaggle and place it in the root folder before running the notebook.
+> ⚠️ The dataset file is not included in this repo due to size, although i have included the zip file in the data folder if you wish you download it from here or download it directly from Kaggle and place it in the root folder before running the notebook.
 
 ---
 
@@ -42,7 +42,7 @@ The analysis is framed as if presenting to a marketing leadership team, with eac
 📦 customer-intelligence-report
  ┣ 📓 customer_analytics_eda.ipynb   ← Main analysis notebook
  ┣ 📄 README.md                      ← You are here
- ┗ 📄 online_retail_II.csv           ← Dataset (download from Kaggle, not tracked in git)
+ ┗ 📄 Data Folder                    ← Dataset Zip (download from Kaggle, not tracked in git)
 ```
 
 ---

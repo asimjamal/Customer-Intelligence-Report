@@ -52,11 +52,21 @@ The analysis is framed as if presenting to a marketing leadership team, with eac
 | Phase | Status | Description |
 |---|---|---|
 | 1️⃣ Setup & Data Loading | ✅ Complete | Environment setup, loading CSV, first look at schema and data quality |
-| 2️⃣ Data Cleaning | 🔄 In Progress | Handling nulls, cancellations, bad records, duplicates |
-| 3️⃣ Revenue & Sales Analysis | ⏳ Upcoming | Monthly trends, top products, top markets |
+| 2️⃣ Data Cleaning | ✅ Complete | Removed duplicates, cancellations, missing IDs, bad price/quantity records; engineered core features |
+| 3️⃣ Revenue & Sales Analysis | 🔄 In Progress | Monthly trends, top products, top markets |
 | 4️⃣ RFM Segmentation | ⏳ Upcoming | Customer scoring, segment labeling (Champions, At-Risk, Lost, etc.) |
 | 5️⃣ Cohort Analysis | ⏳ Upcoming | Retention heatmap by customer acquisition month |
 | 6️⃣ Insights & Recommendations | ⏳ Upcoming | Business narrative and strategic recommendations |
+
+---
+## 🧹 Data Cleaning Decisions
+
+| Issue | Rows Affected | Decision |
+|---|---|---|
+| Duplicate rows | ~5,268 | Dropped — skew all aggregations |
+| Cancelled invoices (prefix 'C') | ~22,950 | Removed from main df; saved in `df_cancelled` |
+| Missing Customer ID | 243,007 (22.77%) | Dropped — required for all customer-level analysis |
+| Zero/negative Price or Quantity | ~6,207 | Dropped — data entry errors, not real transactions |
 
 ---
 

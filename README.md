@@ -49,15 +49,12 @@ The analysis is framed as if presenting to a marketing leadership team, with eac
 
 ## 🔬 Analysis Roadmap
 
-
-## 🔬 Analysis Roadmap
-
 | Phase | Status | Description |
 |---|---|---|
 | 1️⃣ Setup & Data Loading | ✅ Complete | Environment setup, loading CSV, first look at schema and data quality |
 | 2️⃣ Data Cleaning | ✅ Complete | Removed duplicates, cancellations, missing IDs, bad price/quantity records; engineered core features |
 | 3️⃣ Revenue & Sales Analysis | ✅ Complete | Monthly trends, seasonality, top products, top markets, Pareto analysis |
-| 4️⃣ RFM Segmentation | ⏳ Upcoming | Customer scoring, segment labeling (Champions, At-Risk, Lost, etc.) |
+| 4️⃣ RFM Segmentation | ✅ Complete | Customer scoring on Recency, Frequency, Monetary; 6 named segment labels with strategic actions |
 | 5️⃣ Cohort Analysis | ⏳ Upcoming | Retention heatmap by customer acquisition month |
 | 6️⃣ Insights & Recommendations | ⏳ Upcoming | Business narrative and strategic recommendations |
 
@@ -80,7 +77,13 @@ The analysis is framed as if presenting to a marketing leadership team, with eac
 > - UK dominates revenue; top international markets are Netherlands, Ireland, Germany, and France
 > - Classic **Pareto pattern** — a small % of customers generate the majority of revenue
 
-> _Phases 4–6 insights will be added as analysis progresses._
+> **Phase 4 — RFM Segmentation**
+> - Champions are few but generate a disproportionate share of total revenue — the highest-ROI retention target
+> - At Risk customers represent significant revenue about to be lost — immediate re-engagement needed
+> - Potential Loyalists bought recently but infrequently — a key growth segment to convert
+> - 6 named segments mapped to concrete marketing actions (reward, upsell, win-back, suppress)
+
+> _Phases 5–6 insights will be added as analysis progresses._
 
 ---
 ## 🛠️ Tools & Libraries

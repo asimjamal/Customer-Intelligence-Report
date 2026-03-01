@@ -110,10 +110,15 @@ The analysis is framed as if presenting to a marketing leadership team, with eac
 
 ---
 
-## 💡 Key Insights
+## 📊 Project Previews
 
-> _This section will be populated at the end of each phase as findings emerge._
+### Cohort Retention Heatmap
+<img width="973" height="650" alt="image" src="https://github.com/user-attachments/assets/dc70e84d-a60f-4e5f-934f-69dc8ab8d97c" />
 
+### Customer Segment Strategy Matrix
+<img width="973" height="612" alt="image" src="https://github.com/user-attachments/assets/f0e0c304-bdbc-4873-855e-ac2562d9ba7d" />
+
+```
 ---
 
 ## ▶️ How to Run

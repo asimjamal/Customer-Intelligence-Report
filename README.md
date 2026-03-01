@@ -55,8 +55,8 @@ The analysis is framed as if presenting to a marketing leadership team, with eac
 | 2️⃣ Data Cleaning | ✅ Complete | Removed duplicates, cancellations, missing IDs, bad price/quantity records; engineered core features |
 | 3️⃣ Revenue & Sales Analysis | ✅ Complete | Monthly trends, seasonality, top products, top markets, Pareto analysis |
 | 4️⃣ RFM Segmentation | ✅ Complete | Customer scoring on Recency, Frequency, Monetary; 6 named segment labels with strategic actions |
-| 5️⃣ Cohort Analysis | ⏳ Upcoming | Retention heatmap by customer acquisition month |
-| 6️⃣ Insights & Recommendations | ⏳ Upcoming | Business narrative and strategic recommendations |
+| 5️⃣ Cohort Analysis | ✅ Complete | Retention heatmap, cohort curves, and avg retention by month index |
+| 6️⃣ Insights & Recommendations | ✅ Complete | Executive KPI summary, 4 business insights, segment action matrix |
 
 ---
 ## 🧹 Data Cleaning Decisions
@@ -83,7 +83,17 @@ The analysis is framed as if presenting to a marketing leadership team, with eac
 > - Potential Loyalists bought recently but infrequently — a key growth segment to convert
 > - 6 named segments mapped to concrete marketing actions (reward, upsell, win-back, suppress)
 
-> _Phases 5–6 insights will be added as analysis progresses._
+> **Phase 5 — Cohort Retention**
+> - Month 1 retention averages 22.5% — 1 in 4 customers returns the following month
+> - Gradual decline to ~15% through Month 10 with no single churn cliff — healthy pattern
+> - Month 11-12 uptick (15% to 18.2%) reveals annual wholesale repurchase behaviour
+> - Biggest lever: a 30-day post-first-purchase re-engagement sequence targeting Month 1
+>
+> **Phase 6 — Business Recommendations**
+> - Launch summer campaigns (Jun-Aug) to smooth the seasonal revenue trough
+> - Immediate win-back campaign for 192 At Risk customers — over £400K in at-risk revenue
+> - Build a Loyal customer retention programme — losing one Loyal customer = losing 13x a Lost one
+> - Automate re-engagement triggers at the 10-month mark to capture annual repurchase cycle
 
 ---
 ## 🛠️ Tools & Libraries

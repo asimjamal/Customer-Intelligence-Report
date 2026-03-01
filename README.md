@@ -42,6 +42,8 @@ The analysis is framed as if presenting to a marketing leadership team, with eac
 📦 customer-intelligence-report
  ┣ 📓 customer_analytics_eda.ipynb   ← Main analysis notebook
  ┣ 📄 README.md                      ← You are here
+ ┣ 🖼️ cohort_heatmap.png
+ ┣ 🖼️ segment_matrix.png
  ┗ 📄 Data Folder                    ← Dataset Zip (download from Kaggle, not tracked in git)
 ```
 

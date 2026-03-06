@@ -118,7 +118,10 @@ The analysis is framed as if presenting to a marketing leadership team, with eac
 > - 324 customers sit in the Urgent quadrant (High CLV + High Churn Risk)
 > - £780K historical revenue at stake in Urgent quadrant alone
 > - Suggested retention budget of £219K covers the entire Urgent segment at 15% of predicted CLV
-> - _Phase 8 full insights to be finalised after output review_
+> - Protect segment (2,615 customers) holds 89.1% of all revenue — the entire business runs on this group
+> - 2 Loyal customers appear in the Urgent quadrant — most alarming signal, active but showing churn behaviour
+> - Top Urgent customer (ID 12346) has £77K historical CLV — warrants personal outreach, not just email
+> - Lost/Inactive dominates the Urgent list — high-value customers who left but have strong predicted CLV to recover
 
 ---
 

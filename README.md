@@ -51,14 +51,25 @@ The analysis is framed as if presenting to a marketing leadership team, with eac
 
 ## 🔬 Analysis Roadmap
 
+### Core Notebook (Phases 1–6)
+
 | Phase | Status | Description |
 |---|---|---|
 | 1️⃣ Setup & Data Loading | ✅ Complete | Environment setup, loading CSV, first look at schema and data quality |
-| 2️⃣ Data Cleaning | ✅ Complete | Removed duplicates, cancellations, missing IDs, bad price/quantity records; engineered core features |
+| 2️⃣ Data Cleaning | ✅ Complete | Removed duplicates, cancellations, missing IDs, bad price/quantity records |
 | 3️⃣ Revenue & Sales Analysis | ✅ Complete | Monthly trends, seasonality, top products, top markets, Pareto analysis |
-| 4️⃣ RFM Segmentation | ✅ Complete | Customer scoring on Recency, Frequency, Monetary; 6 named segment labels with strategic actions |
-| 5️⃣ Cohort Analysis | ✅ Complete | Retention heatmap, cohort curves, and avg retention by month index |
+| 4️⃣ RFM Segmentation | ✅ Complete | Customer scoring on Recency, Frequency, Monetary; 6 named segment labels |
+| 5️⃣ Cohort Analysis | ✅ Complete | Retention heatmap, cohort curves, avg retention by month index |
 | 6️⃣ Insights & Recommendations | ✅ Complete | Executive KPI summary, 4 business insights, segment action matrix |
+
+### Advanced Notebook (Phases 7–10)
+
+| Phase | Status | Description |
+|---|---|---|
+| 7️⃣ Churn Prediction Model | ✅ Complete | Random Forest classifier, ROC-AUC 0.804, ranked at-risk customer list |
+| 8️⃣ Customer Lifetime Value | ✅ Complete | Historical CLV, predicted CLV, priority matrix, retention budget calculator |
+| 9️⃣ Time-Between-Purchases | 🔄 In Progress | Purchase gap analysis, repurchase cycle detection, early churn signals |
+| 🔟 Product Affinity Analysis | ⏳ Upcoming | Basket analysis, frequently bought together, cross-sell opportunities |
 
 ---
 ## 🧹 Data Cleaning Decisions
@@ -92,10 +103,50 @@ The analysis is framed as if presenting to a marketing leadership team, with eac
 > - Biggest lever: a 30-day post-first-purchase re-engagement sequence targeting Month 1
 >
 > **Phase 6 — Business Recommendations**
-> - Launch summer campaigns (Jun-Aug) to smooth the seasonal revenue trough
+> - Launch summer campaigns (Jun–Aug) to smooth the seasonal revenue trough
 > - Immediate win-back campaign for 192 At Risk customers — over £400K in at-risk revenue
 > - Build a Loyal customer retention programme — losing one Loyal customer = losing 13x a Lost one
 > - Automate re-engagement triggers at the 10-month mark to capture annual repurchase cycle
+>
+> **Phase 7 — Churn Prediction**
+> - ROC-AUC of 0.804 — model genuinely learns behavioural churn patterns
+> - **Tenure** is the single strongest predictor — loyalty is built over time, not just transactions
+> - **UniqueProducts** is 2nd — customers who buy across more categories are harder to churn
+> - £4.2M sits in the Medium Risk tier — the most cost-effective retention target
+>
+> **Phase 8 — Customer Lifetime Value**
+> - 324 customers sit in the Urgent quadrant (High CLV + High Churn Risk)
+> - £780K historical revenue at stake in Urgent quadrant alone
+> - Suggested retention budget of £219K covers the entire Urgent segment at 15% of predicted CLV
+> - _Phase 8 full insights to be finalised after output review_
+
+---
+
+## 🤖 Model Summary — Churn Prediction (Phase 7)
+
+| Item | Detail |
+|---|---|
+| **Algorithm** | Random Forest Classifier |
+| **Features** | Frequency, Monetary, AvgOrderValue, AvgDaysBetween, StdDaysBetween, UniqueProducts, Tenure |
+| **Churn Definition** | No purchase within 60 days of reference date (Dec 10, 2011) |
+| **Test ROC-AUC** | 0.804 |
+| **Top Churn Predictor** | Tenure (0.290) — long-tenure customers are significantly less likely to churn |
+| **High Risk Customers** | 2,413 customers — £1.4M revenue at stake |
+| **Medium Risk Customers** | 2,149 customers — £4.2M revenue at stake |
+
+> **Key finding:** Customers with `Tenure = 0` and `Frequency = 1` (one-time buyers with no loyalty history) dominate the High Risk tier. The biggest churn lever is converting first-time buyers into repeat purchasers.
+
+---
+
+## 💰 CLV Summary (Phase 8)
+
+| Item | Detail |
+|---|---|
+| **Historical CLV** | Total revenue per customer to date |
+| **Predicted CLV** | AvgOrderValue × Purchase Frequency Rate × Personal Lifespan |
+| **Urgent Quadrant** | 324 customers — High CLV + High Churn Risk |
+| **Revenue at Stake** | £780,499 in the Urgent quadrant alone |
+| **Suggested Retention Budget** | £219,879 (@ 15% of predicted CLV per customer) |
 
 ---
 ## 🛠️ Tools & Libraries

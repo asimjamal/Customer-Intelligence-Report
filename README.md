@@ -68,7 +68,7 @@ The analysis is framed as if presenting to a marketing leadership team, with eac
 |---|---|---|
 | 7️⃣ Churn Prediction Model | ✅ Complete | Random Forest classifier, ROC-AUC 0.804, ranked at-risk customer list |
 | 8️⃣ Customer Lifetime Value | ✅ Complete | Historical CLV, predicted CLV, priority matrix, retention budget calculator |
-| 9️⃣ Time-Between-Purchases | 🔄 In Progress | Purchase gap analysis, repurchase cycle detection, early churn signals |
+| 9️⃣ Time-Between-Purchases | ✅ Complete | Gap profiles, regularity classification, early churn signal detection |
 | 🔟 Product Affinity Analysis | ⏳ Upcoming | Basket analysis, frequently bought together, cross-sell opportunities |
 
 ---
@@ -80,6 +80,58 @@ The analysis is framed as if presenting to a marketing leadership team, with eac
 | Cancelled invoices (prefix 'C') | ~22,950 | Removed from main df; saved in `df_cancelled` |
 | Missing Customer ID | 243,007 (22.77%) | Dropped — required for all customer-level analysis |
 | Zero/negative Price or Quantity | ~6,207 | Dropped — data entry errors, not real transactions |
+
+---
+
+## 🤖 Model Summary — Churn Prediction (Phase 7)
+
+| Item | Detail |
+|---|---|
+| **Algorithm** | Random Forest Classifier |
+| **Features** | Frequency, Monetary, AvgOrderValue, AvgDaysBetween, StdDaysBetween, UniqueProducts, Tenure |
+| **Churn Definition** | No purchase within 60 days of reference date (Dec 10, 2011) |
+| **Test ROC-AUC** | 0.804 |
+| **Top Predictor** | Tenure (0.290) — long-tenure customers are significantly less likely to churn |
+| **2nd Predictor** | UniqueProducts (0.146) — product breadth = deeper engagement = lower churn |
+| **3rd Predictor** | Frequency (0.141) — purchase frequency matters, but less than loyalty length |
+| **High Risk Customers** | 2,413 customers — £1.4M revenue at stake |
+| **Medium Risk Customers** | 2,149 customers — £4.2M revenue at stake |
+
+> **Key finding:** Customers with `Tenure = 0` and `Frequency = 1` dominate the High Risk tier.
+> Converting first-time buyers into repeat purchasers is the single highest-leverage retention action.
+
+---
+
+## 💰 CLV Summary (Phase 8)
+
+| Item | Detail |
+|---|---|
+| **Historical CLV** | Total revenue per customer to date |
+| **Predicted CLV** | AvgOrderValue × Purchase Frequency Rate × Personal Lifespan |
+| **Protect Segment** | 2,615 customers holding **89.1% of total revenue** |
+| **Urgent Quadrant** | 324 customers — High CLV + High Churn Risk |
+| **Revenue at Stake** | £780,499 in the Urgent quadrant |
+| **Suggested Retention Budget** | £219,879 (@ 15% of predicted CLV per customer) |
+
+> **Key finding:** The Protect segment holds 89.1% of all revenue. A retention programme
+> focused exclusively on this group — before any new customer acquisition — is the highest-ROI
+> activity this business could undertake.
+
+---
+
+## ⏱️ Time-Between-Purchases Summary (Phase 9)
+
+| Item | Detail |
+|---|---|
+| **Approach** | Per-customer gap profiles: avg, median, std dev, max purchase gap |
+| **Regularity Types** | Consistent (StdGap/AvgGap < 0.5) / Moderate / Erratic (> 1.0) |
+| **Early Warning Signal** | Gap overrun Z-score > 1.5 standard deviations beyond personal avg cycle |
+| **Key Insight** | Erratic buyers show meaningfully higher churn probability than consistent buyers |
+
+> **Key finding:** Standard RFM treats all customers with the same recency the same way.
+> Gap overrun analysis is personalised — a customer 10 days past their 15-day cycle
+> is more at risk than one 10 days past their 90-day cycle. This precision enables
+> more targeted and timely re-engagement triggers.
 
 ---
 ## 💡 Key Insights
@@ -122,6 +174,9 @@ The analysis is framed as if presenting to a marketing leadership team, with eac
 > - 2 Loyal customers appear in the Urgent quadrant — most alarming signal, active but showing churn behaviour
 > - Top Urgent customer (ID 12346) has £77K historical CLV — warrants personal outreach, not just email
 > - Lost/Inactive dominates the Urgent list — high-value customers who left but have strong predicted CLV to recover
+>
+> **Phase 9 — Time-Between-Purchases**
+> - _Insights to be finalised after output review_
 
 ---
 

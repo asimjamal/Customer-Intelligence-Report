@@ -176,7 +176,11 @@ The analysis is framed as if presenting to a marketing leadership team, with eac
 > - Lost/Inactive dominates the Urgent list — high-value customers who left but have strong predicted CLV to recover
 >
 > **Phase 9 — Time-Between-Purchases**
-> - _Insights to be finalised after output review_
+> - Natural repurchase cycle is **72 days** (median) — re-engagement campaigns should trigger around this window
+> - 1,622 single-purchase customers have no gap at all — the biggest retention gap in the business
+> - Surprising finding: **Erratic buyers churn less** (0.31) than Consistent buyers (0.47) — irregular returners are more loyal than they appear
+> - **1,353 customers** flagged with gap overrun Z-score > 1.5 — exceeding their personal purchase cycle significantly
+> - 107 Loyal customers show early overrun signal — still active but drifting, most actionable group for proactive outreach
 
 ---
 
